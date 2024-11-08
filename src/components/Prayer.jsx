@@ -15,9 +15,9 @@ export default function MediaCard({image, text, time}) {
         <Typography gutterBottom variant="h5" component="div">
           {text}
         </Typography>
-        <Typography variant="h2" sx={{ color: 'text.secondary' }}>
+        <h2>
           {time}
-        </Typography>
+        </h2>
       </CardContent>
     </Card>
   );
