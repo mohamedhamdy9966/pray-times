@@ -196,7 +196,7 @@ const setupCountDownTimer = () => {
         </Grid>
         <Grid item xs={6}>
           <div>
-          <h2>اجهزي يا <span style={{color: "pink"}}>نوسة</span> متبقى حتى صلاة {prayersArray[nextPrayerIndex].displayName}</h2>
+          <h2>اجهزي يا نوسة متبقى حتى صلاة {prayersArray[nextPrayerIndex].displayName}</h2>
           <h1>{remainingTime}</h1>
           </div>
         </Grid>
