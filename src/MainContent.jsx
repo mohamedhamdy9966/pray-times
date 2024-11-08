@@ -51,6 +51,17 @@ export default function MainContent() {
     const response = await axios.get(
       `https://api.aladhan.com/v1/timingsByCity?country=EG&city=${selectedCity.apiName}`
     );
+
+    // const apiTimings = response.data.data.timings;
+
+    // const formattedTimings = {
+    //   Fajr: moment(apiTimings.Fajr, "HH:mm").format("HH:mm"),
+    //   Dhuhr: moment(apiTimings.Dhuhr, "HH:mm").format("HH:mm"),
+    //   Asr: moment(apiTimings.Asr, "HH:mm").format("HH:mm"),
+    //   Maghrib: moment(apiTimings.Maghrib, "HH:mm").format("HH:mm"),
+    //   Isha: moment(apiTimings.Isha, "HH:mm").format("HH:mm"),
+    // }
+
     setPrayTimings(response.data.data.timings);
     } catch (error) {
       console.error("Failed to fetch prayer timings:", error);
