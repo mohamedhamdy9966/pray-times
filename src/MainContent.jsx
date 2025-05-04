@@ -8,18 +8,17 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import pray1 from "./assets/pray-1.jpeg";
-import pray2 from "./assets/PRAY-2.jpg";
-import pray3 from "./assets/pray-3.jpg";
-import pray4 from "./assets/pray-4.jpg";
-import pray5 from "./assets/pray-5.jpeg";
+import pray1 from "./assets/1.png";
+import pray2 from "./assets/2.png";
+import pray3 from "./assets/3.png";
+import pray4 from "./assets/4.png";
+import pray5 from "./assets/5.png";
 // import dayjs from "dayjs"; // Add dayjs library to help with date calculations
 import moment from "moment";
 import "moment/dist/locale/ar-dz"
 moment.locale("ar");
 
 export default function MainContent() {
-  
   const [timings, setPrayTimings] = useState({
     Fajr: "02:52",
     Dhuhr: "13:18",
@@ -29,23 +28,17 @@ export default function MainContent() {
   });
 
   const [selectedCity, setSelectedCity] = useState({
-    displayName: "طنطا",
+    displayName: "أبو راضي",
     apiName: "Tanta",
     timeZone: "Africa/Cairo",
   });
 
   // const [timeLeft, setTimeLeft] = useState("");
-
   const [time, setTime] = useState("");
-
   const [date, setDate] = useState("");
-
   const [today, setToday] = useState("");
-
   const [remainingTime, setRemainingTime] = useState("");
-
   const [nextPrayerIndex, setNextPrayerIndex] = useState(0);
-
   const getPrayTimings = async () => {
     try {
     const response = await axios.get(
@@ -109,42 +102,29 @@ const setupCountDownTimer = () => {
   }
 
   setNextPrayerIndex(prayerIndex);
-
   // now after knowing what the next prayer is, We can setup the countdown timer by getting the prayer's time
 
   const nextPrayerObject = prayersArray[prayerIndex];
   const nextPrayerTime = timings[nextPrayerObject.key];
   const nextPrayerTimeMoment = moment(nextPrayerTime, "hh:mm");
-
   let remainingTime = moment(nextPrayerTime, "hh:mm").diff(momentNow);
 
   if (remainingTime < 0) {
     const midnightDiff = moment("23.59.59", "hh:mm:ss").diff(momentNow);
     const fajrToMidnightDiff = nextPrayerTimeMoment.diff(moment("00:00:00", "hh:mm:ss"));
-
     const totalDifference = midnightDiff + fajrToMidnightDiff;
-
     remainingTime = totalDifference;
   }
-
   // دي عشان تخلي صيغة الوقت مفهومة تبقى بالساعات و الدقايق و الثواني مش بالميكرو ثانية
-  
   const durationRemainingTime = moment.duration(remainingTime);
-
   setRemainingTime(`${durationRemainingTime.seconds()} : ${durationRemainingTime.minutes()} : ${durationRemainingTime.hours()}`)
-};  
-
+};
   useEffect(() => {
-    
         const t = moment();
         setToday(t.format("MM DD YYYY | hh:mm"));
-        
         let interval = setInterval(() => {
-
           setupCountDownTimer();
-
         }, 1000);
-    
         return () => {
           clearInterval(interval);
         }}
@@ -196,7 +176,7 @@ const setupCountDownTimer = () => {
         </Grid>
         <Grid item xs={6}>
           <div>
-          <h2>اجهزي يا نوسة متبقى حتى صلاة {prayersArray[nextPrayerIndex].displayName}</h2>
+          <h2>اجهزي يا أحلى موني  فاضل لغاية صلاة {prayersArray[nextPrayerIndex].displayName}</h2>
           <h1>{remainingTime}</h1>
           </div>
         </Grid>
