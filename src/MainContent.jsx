@@ -26,7 +26,6 @@ export default function MainContent() {
     Maghrib: "20:10",
     Isha: "22:11",
   });
-
   const [selectedCity, setSelectedCity] = useState({
     displayName: "أبو راضي",
     apiName: "Tanta",
