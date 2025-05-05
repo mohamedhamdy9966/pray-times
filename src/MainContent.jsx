@@ -43,9 +43,7 @@ export default function MainContent() {
     const response = await axios.get(
       `https://api.aladhan.com/v1/timingsByCity?country=EG&city=${selectedCity.apiName}`
     );
-
     // const apiTimings = response.data.data.timings;
-
     // const formattedTimings = {
     //   Fajr: moment(apiTimings.Fajr, "HH:mm").format("HH:mm"),
     //   Dhuhr: moment(apiTimings.Dhuhr, "HH:mm").format("HH:mm"),
@@ -53,13 +51,11 @@ export default function MainContent() {
     //   Maghrib: moment(apiTimings.Maghrib, "HH:mm").format("HH:mm"),
     //   Isha: moment(apiTimings.Isha, "HH:mm").format("HH:mm"),
     // }
-
     setPrayTimings(response.data.data.timings);
     } catch (error) {
       console.error("Failed to fetch prayer timings:", error);
     }
   };
-
   const getTime = async () => {
     try {
     const response = await axios.get(
@@ -71,23 +67,17 @@ export default function MainContent() {
       console.error("Failed to fetch time:", error);
     }
   }
-
  useEffect(() => {
   const fetchData = async () => {
     await getPrayTimings();
     await getTime();
   };
-
   fetchData();
-
 }, [selectedCity]);
 
 const setupCountDownTimer = () => {
-
   const momentNow = moment();
-
   let prayerIndex = 2;
-
   if (momentNow.isAfter(moment(timings["Fajr"], "HH:mm")) && momentNow.isBefore(moment(timings["Dhuhr"], "HH:mm"))) {
     prayerIndex = 1
   } else if (momentNow.isAfter(moment(timings["Dhuhr"], "HH:mm")) && momentNow.isBefore(moment(timings["Asr"], "HH:mm"))) {
@@ -99,10 +89,8 @@ const setupCountDownTimer = () => {
   } else {
     prayerIndex = 0;
   }
-
   setNextPrayerIndex(prayerIndex);
   // now after knowing what the next prayer is, We can setup the countdown timer by getting the prayer's time
-
   const nextPrayerObject = prayersArray[prayerIndex];
   const nextPrayerTime = timings[nextPrayerObject.key];
   const nextPrayerTimeMoment = moment(nextPrayerTime, "hh:mm");
@@ -175,7 +163,7 @@ const setupCountDownTimer = () => {
         </Grid>
         <Grid item xs={6}>
           <div>
-          <h2>اجهزي يا أحلى موني  فاضل لغاية صلاة {prayersArray[nextPrayerIndex].displayName}</h2>
+          <h2>اجهزي يا أحلى ❤️  موني  فاضل لغاية صلاة 🌸 {prayersArray[nextPrayerIndex].displayName}</h2>
           <h1>{remainingTime}</h1>
           </div>
         </Grid>
