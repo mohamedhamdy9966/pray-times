@@ -118,7 +118,7 @@ const DailyQuote = () => {
     <div className="daily-quote p-4 border rounded shadow text-center max-w-md mx-auto mt-10">
       <h2 className="text-xl font-semibold mb-2">
         Quote of the Day For The One & Only Lovely <span>🌸 Moni ❤️</span> Come
-        Tomorrow for a New Quote My Princess
+        Tomorrow for a New Quote My Princess 🐈
       </h2>
       <p className="text-gray-700 italic">"{quoteOfTheDay}"</p>
     </div>
