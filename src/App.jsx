@@ -15,7 +15,6 @@ function App() {
       >
         <Container maxWidth="xl">
           <MainContent />
-          <DailyQuote/>
         </Container>
       </div>
     </>

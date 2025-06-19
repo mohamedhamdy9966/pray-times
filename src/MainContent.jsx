@@ -13,9 +13,9 @@ import pray2 from "./assets/2.png";
 import pray3 from "./assets/3.png";
 import pray4 from "./assets/4.png";
 import pray5 from "./assets/5.png";
-// import dayjs from "dayjs"; // Add dayjs library to help with date calculations
 import moment from "moment";
 import "moment/dist/locale/ar-dz";
+import DailyQuote from "./components/DailyQuote";
 moment.locale("ar");
 
 export default function MainContent() {
@@ -179,6 +179,8 @@ export default function MainContent() {
           </div>
         </Grid2>
       </Grid2>
+      <Divider style={{ borderColor: "black", opacity: "0.2" }} />
+      <DailyQuote/>
       <Divider style={{ borderColor: "black", opacity: "0.2" }} />
       <Stack
         direction={{ xs: "row" }}
