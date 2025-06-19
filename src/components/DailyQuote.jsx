@@ -109,19 +109,25 @@ const quotes = [
 ];
 
 const DailyQuote = () => {
-  // Get number of days since Unix epoch
+  // Calculate the day index from Unix Epoch to rotate quotes daily
   const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
-  // Use dayIndex to rotate quotes
   const quoteOfTheDay = quotes[dayIndex % quotes.length];
 
   return (
-    <div className="daily-quote p-4 border rounded shadow text-center max-w-md mx-auto mt-10">
-      <h6 className="text-sm font-semibold mb-3 text-violet-800">Just A Small Reminder Of How Precious Are You For Me</h6>
-      <h2 className="text-xl font-semibold mb-2">
-        Quote of the Day For The One & Only Lovely <span>🌸 Moni ❤️</span> Come
-        Tomorrow for a New Quote My Princess 🐈
+    <div className="daily-quote p-6 border-2 border-violet-300 rounded-2xl shadow-xl text-center max-w-2xl mx-auto mt-10 bg-white">
+      <h6 className="text-sm font-semibold mb-2 text-violet-800 tracking-wide uppercase">
+        Just a small reminder of how precious you are to me 💌
+      </h6>
+
+      <h2 className="text-lg md:text-2xl font-bold mb-4 text-violet-900 leading-snug">
+        Quote of the Day for the One & Only Lovely <span className="text-pink-500">🌸 Moni ❤️</span>  
+        <br />
+        Come back tomorrow for a new quote, my princess 🐈
       </h2>
-      <p className="text-gray-700 italic text-5xl text-violet-500">"{quoteOfTheDay}"</p>
+
+      <p className="text-violet-600 italic text-2xl md:text-4xl font-medium mt-6 px-4">
+        “{quoteOfTheDay}”
+      </p>
     </div>
   );
 };
