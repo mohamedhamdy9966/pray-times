@@ -1,6 +1,5 @@
 import { Grid2, Stack } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import Grid from "@mui/material/Grid";
 import Prayer from "./components/Prayer";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -27,7 +26,7 @@ export default function MainContent() {
     Isha: "22:11",
   });
   const [selectedCity, setSelectedCity] = useState({
-    displayName: "أبو راضي",
+    displayName: "زهران ماركت",
     apiName: "Tanta",
     timeZone: "Africa/Cairo",
   });
@@ -180,9 +179,11 @@ export default function MainContent() {
         </Grid2>
       </Grid2>
       <Divider style={{ borderColor: "black", opacity: "0.2" }} />
-      <div className="flex justify-center">
-      <DailyQuote/>
-      </div>
+      <Grid2 container justifyContent="center" sx={{ my: 2 }}>
+        <Grid2 item xs={12} md={8} lg={6}>
+          <DailyQuote />
+        </Grid2>
+      </Grid2>
       <Divider style={{ borderColor: "black", opacity: "0.2" }} />
       <Stack
         direction={{ xs: "row" }}

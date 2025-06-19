@@ -114,7 +114,7 @@ const DailyQuote = () => {
   const quoteOfTheDay = quotes[dayIndex % quotes.length];
 
   return (
-    <div className="daily-quote p-6 border-2 border-violet-300 rounded-2xl shadow-xl text-center max-w-2xl mx-auto mt-10 bg-white">
+    <div className="daily-quote flex justify-center p-6 border-2 border-violet-300 rounded-2xl shadow-xl text-center max-w-2xl mx-auto mt-10 bg-white">
       <h6 className="text-sm font-semibold mb-2 text-violet-800 tracking-wide uppercase">
         Just a small reminder of how precious you are to me 💌
       </h6>
