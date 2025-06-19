@@ -116,6 +116,7 @@ const DailyQuote = () => {
 
   return (
     <div className="daily-quote p-4 border rounded shadow text-center max-w-md mx-auto mt-10">
+      <h6 className="text-sm font-semibold mb-3">Just A Small Reminder Of How Precious Are You For Me</h6>
       <h2 className="text-xl font-semibold mb-2">
         Quote of the Day For The One & Only Lovely <span>🌸 Moni ❤️</span> Come
         Tomorrow for a New Quote My Princess 🐈
