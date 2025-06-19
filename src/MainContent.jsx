@@ -180,7 +180,9 @@ export default function MainContent() {
         </Grid2>
       </Grid2>
       <Divider style={{ borderColor: "black", opacity: "0.2" }} />
+      <div className="flex justify-center">
       <DailyQuote/>
+      </div>
       <Divider style={{ borderColor: "black", opacity: "0.2" }} />
       <Stack
         direction={{ xs: "row" }}
